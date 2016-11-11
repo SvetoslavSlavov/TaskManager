@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Tasks.Web.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Tasks.Web.Controllers
 {
@@ -14,15 +13,8 @@ namespace Tasks.Web.Controllers
             var tasks = this.db.Tasks
                 .OrderBy(e => e.StartDateTime)
                 .Where(e => e.IsPublic)
-                .Select(e => new TaskViewModel()
-                {
-                    Id=e.Id,
-                    Title=e.Title,
-                    StartDateTime=e.StartDateTime,
-                    Duration=e.Duration,
-                    Author=e.Author.FullName,
-                    Location=e.Location
-                });
+                .Select(TaskViewModel.ViewModel);
+
             var upcomingTasks = tasks.Where(e => e.StartDateTime > DateTime.Now);
             var passedTasks = tasks.Where(e => e.StartDateTime <= DateTime.Now);
             return View(new UpcomingPassedTasksViewModel()
@@ -30,6 +22,22 @@ namespace Tasks.Web.Controllers
                 UpcomingTasks=upcomingTasks,
                 PassedTasks=passedTasks
             });
-        }   
+        }
+        public ActionResult TaskDetailsById(int id)
+        {
+            var currentUserId = this.User.Identity.GetUserId();
+            var isAdmin = this.IsAdmin();
+            var taskDetails = this.db.Tasks
+                .Where(e => e.Id == id)
+                .Where(e => e.IsPublic || isAdmin || (e.AuthorId != null && e.AuthorId == currentUserId))
+                .Select(TaskDetailsViewModel.ViewModel)
+                .FirstOrDefault();
+
+            var isOwner = (taskDetails != null && taskDetails.AuthorId != null &&
+                taskDetails.AuthorId == currentUserId);
+            this.ViewBag.CanEdit = isOwner || isAdmin;
+
+            return this.PartialView("_TaskDetails", taskDetails);
+        }
     }
 }

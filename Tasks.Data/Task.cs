@@ -23,6 +23,8 @@ namespace Tasks.Data
         public string Location { get; set; }
         public bool IsPublic { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+        public string Description { get; set; }
+
         public Task()
         {
             this.IsPublic = true;

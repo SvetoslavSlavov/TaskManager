@@ -118,7 +118,8 @@ var
 			jQuery.ready();
 		}
 	},
-	// Clean-up method for dom ready events
+	// Clean-up method for dom ready 
+
 	detach = function() {
 		if ( document.addEventListener ) {
 			document.removeEventListener( "DOMContentLoaded", completed, false );
