@@ -1,7 +1,12 @@
-﻿
+﻿@model Tasks.Web.Models.UpcomingPassedTasksViewModel
+
 @{
     ViewBag.Title = "My Tasks";
 }
 
-<h2>@ViewBag.Title</h2>
+@Html.Partial("_Tasks")
+
+@section scripts{
+    @Scripts.Render("~/bundles/ajax")
+    }
 

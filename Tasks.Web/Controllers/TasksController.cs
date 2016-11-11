@@ -1,5 +1,7 @@
 ﻿
 using Microsoft.AspNet.Identity;
+using System;
+using System.Linq;
 using System.Web.Mvc;
 using Tasks.Data;
 using Tasks.Web.Extensions;
@@ -12,7 +14,19 @@ namespace Tasks.Web.Controllers
     {
         public ActionResult My()
         {
-            return View();
+            string currentUserId = this.User.Identity.GetUserId();
+            var tasks = this.db.Tasks
+                .Where(e => e.AuthorId == currentUserId)
+                .OrderBy(e => e.StartDateTime)
+                .Select(TaskViewModel.ViewModel);
+
+            var upcomingTasks = tasks.Where(e => e.StartDateTime > DateTime.Now);
+            var passedTasks = tasks.Where(e => e.StartDateTime <= DateTime.Now);
+            return View(new UpcomingPassedTasksViewModel()
+            {
+                UpcomingTasks = upcomingTasks,
+                PassedTasks = passedTasks
+            });
         }
 
         [HttpGet]

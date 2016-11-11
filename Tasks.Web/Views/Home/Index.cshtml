@@ -1,21 +1,10 @@
 ﻿@model Tasks.Web.Models.UpcomingPassedTasksViewModel
 
 @{
-    ViewBag.Title = "Tasks";
+    ViewBag.Title = "Public Tasks";
 }
 
-<h1 class="task-group-heading">Upcoming Tasks</h1>
-
-<div class="row">
-    @if (Model.UpcomingTasks.Any())
-    {
-        @Html.DisplayFor(x=>x.UpcomingTasks)
-    }
-    else
-    {
-        <div class="col-md-4 col-sm-6 col-xs-12">No tasks</div>
-    }
-</div>
+@Html.Partial("_Tasks")
 
 @section scripts {
     @Scripts.Render("~/bundles/ajax")
