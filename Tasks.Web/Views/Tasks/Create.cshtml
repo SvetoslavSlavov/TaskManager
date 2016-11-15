@@ -11,6 +11,9 @@
 @section styles {
     @Styles.Render("~/Content/bootstrap-datetimepicker")
 }
+
+
+
 <h2>Create</h2>
 
 @using (Html.BeginForm()) 
@@ -41,7 +44,8 @@
             $(function () {
                 $('#StartDateTime').datetimepicker(
                 {
-                    format: 'DD-MMM-YYYY HH:mm',
+                    format: 'DD/MM/YYYY HH:mm:ss',
+                    //format:'d.MM.YYYY HH:mm',
                     sideBySide: true,
                     showTodayButton: true
                 });
