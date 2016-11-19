@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
+using Tasks.Data;
 
 namespace Tasks.Web.Models
 {
@@ -23,5 +22,18 @@ namespace Tasks.Web.Models
         public string Location { get; set; }
         [Display(Name ="Is Public")]
         public bool IsPublic { get; set; }
+
+         public static TaskInputModel CreateFromTask(Data.Task e)
+        {
+            return new TaskInputModel()
+            {
+                Title = e.Title,
+                StartDateTime = e.StartDateTime,
+                Duration = e.Duration,
+                Location = e.Location,
+                Description = e.Description,
+                IsPublic = e.IsPublic
+            };
+        }
     }
 }
