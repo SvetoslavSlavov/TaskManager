@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Threading.Tasks;
 using Tasks.Data;
 
@@ -12,8 +13,7 @@ namespace Tasks.Web.Models
             MinimumLength =1)]
         [Display(Name ="Title *")]
         public string Title { get; set; }
-
-        [DataType(DataType.DateTime)]
+        
         [Display(Name ="Date and Time *")]
         public DateTime StartDateTime { get; set; }
         public TimeSpan? Duration { get; set; }
