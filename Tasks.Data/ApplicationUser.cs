@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 namespace Tasks.Data
 {
         public class ApplicationUser : IdentityUser
-        {
-        [Required]
+        {   
         public string FullName { get; set; }
             public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
             {

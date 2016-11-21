@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Tasks.Web.Controllers
 {
+    [RequireHttps]
     public class HomeController : BaseController
     {
         public ActionResult Index()

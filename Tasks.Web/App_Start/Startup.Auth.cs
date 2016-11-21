@@ -55,15 +55,15 @@ namespace Tasks.Web
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "228973817523772",
+               appSecret: "f4d133eaa5cebe174ae1945c1393dee6");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(
+
+                 clientId: "243577231630-iqj2tkni6ov1erpc1db481kja76gta2k.apps.googleusercontent.com",
+                clientSecret: "nKSkjFF2sTqzYZOISCjFYQSv");
+            
         }
     }
 }
