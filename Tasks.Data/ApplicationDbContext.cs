@@ -20,5 +20,6 @@ namespace Tasks.Data
         {
             return new ApplicationDbContext();
         }
+        
     }
 }

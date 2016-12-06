@@ -29,6 +29,10 @@
                         <li>@Html.ActionLink("My Tasks", "My", "Tasks")</li>
                         <li>@Html.ActionLink("Create Task", "Create", "Tasks")</li>
                     }
+                    @if (Request.IsAuthenticated && User.Identity.Name == "admin@admin.com")
+                    {
+                        <li>@Html.ActionLink("Admin", "Index", "Administrator")</li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
