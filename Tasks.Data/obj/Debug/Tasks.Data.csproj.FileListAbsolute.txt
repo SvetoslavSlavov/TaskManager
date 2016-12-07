@@ -26,3 +26,4 @@ D:\TaskManager\Tasks.Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xm
 D:\TaskManager\Tasks.Data\obj\Debug\Tasks.Data.csprojResolveAssemblyReference.cache
 D:\TaskManager\Tasks.Data\obj\Debug\Tasks.Data.dll
 D:\TaskManager\Tasks.Data\obj\Debug\Tasks.Data.pdb
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Data\bin\Debug\System.Linq.Dynamic.dll

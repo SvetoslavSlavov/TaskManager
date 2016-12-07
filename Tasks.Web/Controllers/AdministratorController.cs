@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Tasks.Data;
+using PagedList;
+using Microsoft.AspNet.Identity;
+using System.Linq.Dynamic;
 
 namespace Tasks.Web.Controllers
 {
@@ -14,23 +17,22 @@ namespace Tasks.Web.Controllers
     public class AdministratorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        public ActionResult Index(string searchString,string emailSearch)
+        public ActionResult Index(string searchString,string emailSearch, int page=1)
         {
+            
             var users = from s in db.Users
                         select s;
             
-
             if (!String.IsNullOrEmpty(searchString))
             {
                 users = users.Where(s => s.FullName.Contains(searchString));
-                                       //|| s.Email.Contains(searchString));
             }
             if (!String.IsNullOrEmpty(emailSearch))
             {
                 users = users.Where(s => s.Email.Contains(emailSearch));
             }
-            //return View(db.Users.ToList());
-            return View(users);
+
+            return View(users.OrderByDescending(v =>v.UserName).ToPagedList(page,10));
         }
         
         public ActionResult Details(string id)

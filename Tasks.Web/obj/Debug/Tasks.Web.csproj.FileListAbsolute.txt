@@ -140,3 +140,8 @@ D:\TaskManager\Tasks.Web\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\TaskManager\Tasks.Web\obj\Debug\Tasks.Web.csprojResolveAssemblyReference.cache
 D:\TaskManager\Tasks.Web\obj\Debug\Tasks.Web.dll
 D:\TaskManager\Tasks.Web\obj\Debug\Tasks.Web.pdb
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.dll
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.Mvc.dll
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.xml
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.Mvc.xml
+D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\System.Linq.Dynamic.dll
