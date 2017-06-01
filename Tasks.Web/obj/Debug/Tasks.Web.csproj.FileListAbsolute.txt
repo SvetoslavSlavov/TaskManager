@@ -145,3 +145,8 @@ D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\b
 D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.xml
 D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\PagedList.Mvc.xml
 D:\ООП и Събитийно Програмиране\TaskManager\Tasks.Web\bin\System.Linq.Dynamic.dll
+D:\TaskManager\Tasks.Web\bin\PagedList.dll
+D:\TaskManager\Tasks.Web\bin\PagedList.Mvc.dll
+D:\TaskManager\Tasks.Web\bin\System.Linq.Dynamic.dll
+D:\TaskManager\Tasks.Web\bin\PagedList.xml
+D:\TaskManager\Tasks.Web\bin\PagedList.Mvc.xml
